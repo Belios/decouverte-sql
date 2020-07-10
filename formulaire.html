@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+
+    <input type="hidden" name="tablename" value="userlist">
+    <form name="users" action="form2php.php">
+
+    <form name="users" method="post" action="form2php.php">
+   <input type="hidden" name="tablename" value="userlist">
+    <p>Nom <input type="text" name="name" maxlength=32></p>
+    <p>Prénom <input type="text" name="prenom" maxlength=32></p>
+    <p>Email <input type="text" name="email" maxlength=64></p>
+    <p> <input type="text" name="message" placeholder="Votre message..." maxlength=540 style="height:150px; width:350px;"></p>
+   <input type="submit" value="Submit">
+</form>
+
+  </body>
+</html>
