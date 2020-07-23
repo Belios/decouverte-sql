@@ -97,17 +97,18 @@ echo "</tbody></table><hr>";
 </div>
 
 <div class="project">
-<h1> Projets </h1>
+  <h1> Projets </h1>
+
 
 <div class="contact">
-<h1>Contact</h1>
-<form method="post">
-<label>Email</label>
-<input class="mail_line" type="email" name="email" required><br>
-<label>Message</label>
-<textarea name="message" rows="10" cols="100" required></textarea><br>
-<input type="submit">
-</form>
+  <h1>Contact</h1>
+  <form method="post">
+    <label>Email</label>
+    <input class="mail_line" type="email" name="email" required><br>
+    <label>Message</label>
+      <textarea name="message" rows="10" cols="100" required></textarea><br>
+      <input type="submit">
+  </form>
 </div>
 
 <?php
