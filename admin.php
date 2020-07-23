@@ -47,7 +47,7 @@ include "connexion.php";
   <a href="index.php">Revenir au site</a>
   <hr>
 
-  <!-- Connection serveur -->
+   Connection serveur -->
 <!--  <p class="font-weight-bold">Connection à la basse de donnée "portfolio" :</p> -->
   <?php
   if (isset($connS)) {
@@ -64,12 +64,12 @@ include "connexion.php";
   <?php
     if (!empty($_POST['titre']) && !empty($_POST['contenu'])) {
       try {
-        $add_content= $conn->prepare('INSERT INTO formulaire (titre, id, contenu, date) VALUES (:titre, :id, :contenu, NULL)');
+        $add_content= $conn->prepare('INSERT INTO formulaire (titre, contenu) VALUES (:titre, :contenu)');
         $add_content->execute(array(
           ':titre' => $_POST['titre'],
           ':contenu' => $_POST['contenu'],
-          ':id' => $_POST['id'],
-          'NULL' => $_POST['date']
+          ':id' => $_POST['id']
+
         ));
       } catch (\Exception $e) {
         echo $e->getMessage();
@@ -117,10 +117,10 @@ include "connexion.php";
           </thead>
           <tbody>";
   foreach ($conn -> query($sql) as $row) {
-    echo "<tr><td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['titre'] . "</td>";
-    echo "<td>" . $row['date'] . "</td>";
-    echo "<td>" . $row['contenu'] . "</td></tr>";
+    echo "<tr><td>" . $row['id'] . var_dump($_POST['id']) . "</td>";
+    echo "<td>" . $row['titre'] . var_dump($_POST['titre']) . "</td>";
+    echo "<td>" . $row['date_now'] . "</td>";
+    echo "<td>" . $row['contenu'] . var_dump($_POST['contenu']) .  "</td></tr>";
   }
   echo "</tbody></table><hr>";
   ?>
@@ -138,8 +138,8 @@ include "connexion.php";
   <label for="titre">Titre</label>
     <input type="text" name="titre" value="">
 
-    <label for="titre">ID</label>
-      <input type="text" name="id" value="">
+    <label for="id">ID</label>
+     <input type="text" name="id" value="">
 
   <label for="contenu">Contenu</label>
   <input type="text" name="contenu" value="">
