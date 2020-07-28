@@ -1,5 +1,5 @@
 
-$(document).ready(function() {
+document.querySelector(document).ready(function() {
 	const $cont = $('.cont');
 	const $slider = $('.slider');
 	const $nav = $('.nav');
